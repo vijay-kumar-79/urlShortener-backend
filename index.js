@@ -2,10 +2,11 @@ const express = require("express");
 const urlRoute = require("./routes/urlRoute");
 const redirectUrl = require("./routes/redirect");
 const connectDB = require("./utils/db");
-const cors = require("cors")
+const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORt || 5000;
 connectDB();
 
 app.use(cors());
